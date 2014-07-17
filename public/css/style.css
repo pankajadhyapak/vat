@@ -1,0 +1,15 @@
+*{
+    font-family: 'Open Sans' !important;
+}
+
+.navbar {
+    border-width: 0;
+    border-radius: 0px;
+}
+
+.displayTime{
+    float: right;
+    margin-right: 12px;
+    font-style: italic;
+    font-size: 14px;
+}
