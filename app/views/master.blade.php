@@ -60,6 +60,27 @@
                 min:-180,
                 max: new Date()
             });
+
+            $( '#original_invoice_date' ).pickadate({
+                format: 'dd/mm/yyyy',
+                formatSubmit: 'yyyy/mm/dd',
+                min:-180,
+                max: new Date()
+            });
+
+            $( '#debit_note_date' ).pickadate({
+                format: 'dd/mm/yyyy',
+                formatSubmit: 'yyyy/mm/dd',
+                min:-180,
+                max: new Date()
+            });
+
+            $( '#credit_note_date' ).pickadate({
+                format: 'dd/mm/yyyy',
+                formatSubmit: 'yyyy/mm/dd',
+                min:-180,
+                max: new Date()
+            });
         });
     </script>
   </body>

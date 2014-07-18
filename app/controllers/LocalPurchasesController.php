@@ -21,8 +21,7 @@ class LocalPurchasesController extends \BaseController {
 	 */
 	public function index()
 	{
-        $localPurchases = LocalPurchase::where('user_id', Auth::user()->id )->get();
-        
+        $localPurchases = Auth::user()->LocalPurchase;
 
 		return View::make('LocalPurchases.index', compact('localPurchases'));
 	}
@@ -35,7 +34,7 @@ class LocalPurchasesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('LocalPurchases.create')->with('year',\Carbon\Carbon::now()->year);
 	}
 
 	/**
@@ -158,7 +157,7 @@ class LocalPurchasesController extends \BaseController {
 				
 				LocalPurchase::destroy($id);
 				
-				return Redirect::to('/LocalPurchases')->with('flash_message', 'Deleted Successfully !!');
+				return Redirect::route('LocalPurchases.index')->with('flash_message', 'Deleted Successfully !!');
 			}else{
 				return Redirect::back()->with('flash_message','You Dont have permission to Delete that !!');
 			}

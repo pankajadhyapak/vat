@@ -23,3 +23,10 @@ Route::get('/LocalPurchases/{id}/delete','LocalPurchasesController@destroy');
 
 
 Route::post('generatexml','XmlController@process');
+
+
+Route::resource('creditNotes', 'CreditNotesController');
+Route::get('/creditNotes/{id}/delete','CreditNotesController@destroy');
+
+Route::resource('DebitNotes', 'DebitNotesController');
+Route::get('/DebitNotes/{id}/delete','DebitNotesController@destroy');

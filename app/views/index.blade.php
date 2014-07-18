@@ -3,36 +3,53 @@
 @section('content')
 
 <div class="col-md-8 col-md-offset-2 well bs-component">
-	<div class="col-md-9">
-		 <h4>Purchase details</h4>
-	</div>
-	<div class="col-md-3">
-		 <button class="btn btn-success" data-toggle="modal" data-target="#xmlgen">Generate Xml </button>
-	</div>
+    <h4>Welcome {{ Auth::user()->email }}</h4>
 </div>
 
 <div class="col-md-8 col-md-offset-2  bs-component">
 
-    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-        <li class="active"><a href="#lp" data-toggle="tab">Local Purchase</a></li>
-        <li class=""><a href="#ls" data-toggle="tab">Local Sale</a></li>
-
-    </ul>
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade active in" id="lp">
-            <p>
-                @include('forms/localpurchase')
-            </p>
-        </div>
-        <div class="tab-pane fade" id="ls">
-            <p>
-                @include('forms/localsales')
-            </p>
+    <div class="col-md-4 home one">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Local Purchases</h3>
+            </div>
+            <div class="panel-body">
+                <span class="dash-num">{{ Auth::user()->LocalPurchase()->count() }}</span> Entries
+                <a href="{{ URL::route('LocalPurchases.index') }}" class="btn btn-info">Show all Local Purchases</a>
+                <br><br>
+                <a href="{{ URL::route('LocalPurchases.create') }}" class="btn btn-info">Add New Local Purchases</a>
+            </div>
         </div>
 
     </div>
+    <div class="col-md-4 home">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Debit Notes</h3>
+            </div>
+            <div class="panel-body">
+                <span class="dash-num">{{ Auth::user()->DebitNotes()->count() }}</span> Entries
+                <a href="{{ URL::route('DebitNotes.index') }}" class="btn btn-info">Show all Debit Notes</a>
+                <br><br>
+                <a href="{{ URL::route('DebitNotes.create') }}" class="btn btn-info">Add New Debit Note</a>
+            </div>
+        </div>
 
-@include('generateXml')
+    </div>
+    <div class="col-md-4 home">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Credit Notes</h3>
+            </div>
+            <div class="panel-body">
+                <span class="dash-num">{{ Auth::user()->CreditNotes()->count() }}</span> Entries
+                <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Credit Notes</a>
+                <br><br>
+                <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Credit Note</a>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 @stop

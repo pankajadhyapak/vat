@@ -3,7 +3,12 @@
 @section('content')
 
 <div class="col-md-8 col-md-offset-2 well bs-component">
-    <h4>All Local Purchases</h4>
+    <div class="col-md-9">
+        <h4>All Local Purchase </h4>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-success" data-toggle="modal" data-target="#xmlgen">Generate Xml </button>
+    </div>
 </div>
 
 <div class="col-md-8 col-md-offset-2  bs-component">
