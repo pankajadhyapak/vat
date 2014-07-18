@@ -21,7 +21,7 @@ class CreditNotesController extends \BaseController {
 	{
 		$creditPurchases = Auth::user()->CreditNotes;
 
-        return View::make('CreditNotes.index',compact('creditPurchases'));
+        	return View::make('creditNotes.index',compact('creditPurchases'));
 	}
 
 	/**
