@@ -61,6 +61,13 @@
                 max: new Date()
             });
 
+            $( '#invoice_date' ).pickadate({
+                format: 'dd/mm/yyyy',
+                formatSubmit: 'yyyy/mm/dd',
+                min:-180,
+                max: new Date()
+            });
+
             $( '#original_invoice_date' ).pickadate({
                 format: 'dd/mm/yyyy',
                 formatSubmit: 'yyyy/mm/dd',

@@ -30,3 +30,7 @@ Route::get('/creditNotes/{id}/delete','CreditNotesController@destroy');
 
 Route::resource('DebitNotes', 'DebitNotesController');
 Route::get('/DebitNotes/{id}/delete','DebitNotesController@destroy');
+
+Route::resource('LocalSales', 'LocalSalesController');
+Route::get('/LocalSales/{id}/delete','LocalSalesController@destroy');
+
