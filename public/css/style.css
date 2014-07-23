@@ -22,10 +22,12 @@
 .one a {
     font-size: 13px;
 }
-.home{ text-align:center; }
+.home,.homeisp,.homeiss{ text-align:center; }
 .links-add-new a {
     margin: 12px;
 }
 
-.homeisp a { font-size: 11px;}
-.homeiss a { font-size: 12px;}
+.homeisp a { font-size: 11px; text-align:center; }
+.homeiss a { font-size: 12px; text-align:center;}
+.home .btn,.homeisp .btn,.homeiss .btn{ display:block !important; }
+ 
