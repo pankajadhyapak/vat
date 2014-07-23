@@ -28,6 +28,8 @@
                         <li><a href="{{ URL::route('LocalSales.index') }}">Local Sales</a></li>
                         <li><a href="{{ URL::route('DebitNotes.index') }}">Debit Notes </a></li>
                         <li><a href="{{ URL::route('creditNotes.index') }}">Credit Notes</a></li>
+                        <li><a href="{{ URL::route('InterStatePurchases.index') }}">Inter State Purchases</a></li>
+                        <li><a href="{{ URL::route('InterStateSales.index') }}">Inter State Sales</a></li>
 
                     </ul>
                 </li>

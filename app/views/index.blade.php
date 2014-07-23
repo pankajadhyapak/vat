@@ -6,8 +6,9 @@
     <h4>Welcome {{ Auth::user()->email }}</h4>
 </div>
 
-<div class="col-md-8 col-md-offset-2  bs-component">
+<div class="col-md-8 col-md-offset-2  bs-component row">
 
+<div class="row">
     <div class="col-md-4 home one">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -48,7 +49,36 @@
                 <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Credit Note</a>
             </div>
         </div>
+    </div>
+</div><!-- End row -->
+    <div class="row">
+        <div class="col-md-4 homeisp">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Inter State Purchases</h3>
+                </div>
+                <div class="panel-body">
+                    <span class="dash-num">{{ Auth::user()->InterStatePurchases()->count() }}</span> Entries
+                    <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Inter State Purchases</a>
+                    <br><br>
+                    <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Inter State Purchases</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-md-4 homeiss">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Inter State Sales</h3>
+                </div>
+                <div class="panel-body">
+                    <span class="dash-num">{{ Auth::user()->InterStateSales()->count() }}</span> Entries
+                    <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Inter State Sales</a>
+                    <br><br>
+                    <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Inter State Sales</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

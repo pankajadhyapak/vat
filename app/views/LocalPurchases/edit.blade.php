@@ -81,7 +81,7 @@
         
         <!-- Button Form Input -->
         <div class="form-group">
-            {{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
+            {{ Form::submit('Update This ', ['class' => 'btn btn-primary']) }}
         </div>
 
     {{ Form::close() }}

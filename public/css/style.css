@@ -23,3 +23,9 @@
     font-size: 13px;
 }
 .home{ text-align:center; }
+.links-add-new a {
+    margin: 12px;
+}
+
+.homeisp a { font-size: 11px;}
+.homeiss a { font-size: 12px;}

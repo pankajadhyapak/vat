@@ -1,4 +1,8 @@
 <?php
+
+//Event::listen('illuminate.query',function($query){
+//   var_dump($query);
+//});
 Route::get('login', function()
 {
     return View::make('login');
@@ -7,6 +11,7 @@ Route::get('login', function()
 Route::get('bills', 'AuthController@bills');
 Route::post('login','AuthController@login');
 Route::get('logout','AuthController@logout');
+
 Route::get('register', function()
 {
     return View::make('register');
@@ -33,4 +38,10 @@ Route::get('/DebitNotes/{id}/delete','DebitNotesController@destroy');
 
 Route::resource('LocalSales', 'LocalSalesController');
 Route::get('/LocalSales/{id}/delete','LocalSalesController@destroy');
+
+Route::resource('InterStatePurchases', 'InterStatePurchasesController');
+Route::resource('/InterStatePurchases/{id}/delete', 'InterStatePurchasesController@destroy');
+
+Route::resource('InterStateSales', 'InterStateSalesController');
+Route::resource('/InterStateSales/{id}/delete', 'InterStateSalesController@destroy');
 
