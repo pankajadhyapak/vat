@@ -26,6 +26,19 @@
     <div class="col-md-4 home">
         <div class="panel panel-primary">
             <div class="panel-heading">
+                <h3 class="panel-title">Local Sales</h3>
+            </div>
+            <div class="panel-body">
+                <span class="dash-num">{{ Auth::user()->LocalSales()->count() }}</span> Entries
+                <a href="{{ URL::route('LocalSales.index') }}" class="btn btn-info">Show all Local Sales</a>
+                <br>
+                <a href="{{ URL::route('LocalSales.create') }}" class="btn btn-info">Add New Local Sales</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 home">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
                 <h3 class="panel-title">Debit Notes</h3>
             </div>
             <div class="panel-body">
@@ -37,21 +50,24 @@
         </div>
 
     </div>
-    <div class="col-md-4 home">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Credit Notes</h3>
-            </div>
-            <div class="panel-body">
-                <span class="dash-num">{{ Auth::user()->CreditNotes()->count() }}</span> Entries
-                <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Credit Notes</a>
-                <br>
-                <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Credit Note</a>
-            </div>
-        </div>
-    </div>
+
 </div><!-- End row -->
     <div class="row">
+
+        <div class="col-md-4 home">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Credit Notes</h3>
+                </div>
+                <div class="panel-body">
+                    <span class="dash-num">{{ Auth::user()->CreditNotes()->count() }}</span> Entries
+                    <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Credit Notes</a>
+                    <br>
+                    <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Credit Note</a>
+                </div>
+            </div>
+        </div>
+
         <div class="col-md-4 homeisp">
             <div class="panel panel-primary">
                 <div class="panel-heading">

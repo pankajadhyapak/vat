@@ -8,7 +8,7 @@ class InterStatePurchasesForm extends FormValidator{
     protected $rules = [
         'month' => 'required',
         'year' => 'required',
-        'seller_tin' => 'required|regex:/^[2][9]\d{9}$/',
+        'seller_tin' => 'required|integer|digits:11',
         'name_of_seller' => 'required|alpha|max:30',
         'address_of_seller' => 'required',
         'invoice_number' => 'required|alphanum|regex:^(?=.*\d)^',

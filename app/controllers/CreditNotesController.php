@@ -32,7 +32,7 @@ class CreditNotesController extends \BaseController {
 	 */
 	public function create()
 	{
-        return View::make('CreditNotes.create')->with('year',\Carbon\Carbon::now()->year);
+        return View::make('creditNotes.create')->with('year',\Carbon\Carbon::now()->year);
 
     }
 
@@ -69,7 +69,7 @@ class CreditNotesController extends \BaseController {
 
         if(Auth::check()){
             if( ( Auth::user()->id) == $purchase->user_id ){
-                return View::make('CreditNotes.show',compact('purchase'));
+                return View::make('creditNotes.show',compact('purchase'));
             }else{
                 return Redirect::route('creditNotes.index')->with('flash_message','You Dont have permission to view that !!');
             }
@@ -92,7 +92,7 @@ class CreditNotesController extends \BaseController {
 
         if(Auth::check()){
             if( ( Auth::user()->id) == $purchase->user_id ){
-                return View::make('CreditNotes.edit',compact('purchase'));
+                return View::make('creditNotes.edit',compact('purchase'));
             }else{
                 return Redirect::back()->with('flash_message','You Dont have permission to Edit that !!');
             }
@@ -111,7 +111,7 @@ class CreditNotesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-        $this->validator->validate(Input::all());
+        $this->validator->validateUpdate(Input::all());
 
         if( Auth::user()->CreditNotes()->where('id',$id)->update(Input::except('_token','_method','credit_note_date_submit','original_invoice_date_submit' )) ){
 

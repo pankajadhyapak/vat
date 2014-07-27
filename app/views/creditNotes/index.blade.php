@@ -15,8 +15,8 @@
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
-            <td><strong>Buyer Name</strong></td>
-            <td><strong>Credit Note Date</strong></td>
+            <td><strong>Name</strong></td>
+            <td><strong>Date</strong></td>
             <td><strong>Total Amount</strong></td>
             <td><strong>Actions</strong></td>
         </tr>
@@ -28,7 +28,7 @@
         <tr>
             <td>{{ $purchases->name_of_the_buyer }}</td>
             <td>{{ $purchases->credit_note_date }}</td>
-            <td>{{ $purchases->total_charges }}</td>
+            <td>{{ ( ($purchases->net_value) + ($purchases->tax_value) + ($purchases->other_charges) ) }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>

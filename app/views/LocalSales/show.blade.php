@@ -3,22 +3,32 @@
 @section('content')
 
 
-
-<div class="col-md-8 col-md-offset-2  bs-component">
+<div class="col-md-8 col-md-offset-2  bs-component" xmlns="http://www.w3.org/1999/html">
 
 
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="panel-title">Local Sale Details</h3>
+            <h3 class="panel-title">Purchase Details</h3>
         </div>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
+            <table class="table table-bordered table-responsive" >
 
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Local Sale Id : </strong>{{ $purchase->id }}</li>
+                @foreach($purchase->toArray() as $key => $items )
+                @if( ($key == 'id') || ($key == 'user_id') || ($key == 'created_at') || ($key == 'updated_at'))
+                @continue
+                @endif
+                <tr>
+                    <td><strong>
+                            {{ ucwords($text = preg_replace('/_ */i', ' ', $key)) }}
+                        </strong> : </td>
+                    <td> {{ $items }}</td>
+                </tr>
 
-            </ul>
+
+                @endforeach
+            </table>
 
         </div>
     </div>

@@ -15,8 +15,15 @@ class CreditNotesForm extends FormValidator{
         'other_charges' => 'required|integer|min:0',
         'total_charges' => 'required|integer|min:0',
         'original_invoice_number' => 'required|exists:local_purchases,invoice_number',
+        // InterStateSales or localSales
         'original_invoice_date' => 'required|exists:local_purchases,invoice_date'
 
     ];
+
+    public function validateUpdate(array $input)
+    {
+        array_shift($this->rules);
+        $this->validate($input);
+    }
 
 } 

@@ -99,3 +99,11 @@
 
 
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#net_value').blur(function(){
+            $('#total_charges').val($('#net_value').val());
+        });
+    });
+</script>

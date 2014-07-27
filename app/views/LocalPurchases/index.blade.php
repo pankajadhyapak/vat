@@ -15,7 +15,7 @@
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-			<td><strong>Seller Name</strong></td>
+			<td><strong>Name</strong></td>
 			<td><strong>Invoice Date</strong></td>
 			<td><strong>Total Amount</strong></td>
 			<td><strong>Actions</strong></td>

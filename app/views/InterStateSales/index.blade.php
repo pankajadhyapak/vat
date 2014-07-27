@@ -14,8 +14,8 @@
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
-            <td><strong>Seller Name</strong></td>
-            <td><strong>Debit Note Date</strong></td>
+            <td><strong>Name</strong></td>
+            <td><strong>Date</strong></td>
             <td><strong>Total Amount</strong></td>
             <td><strong>Actions</strong></td>
         </tr>
@@ -26,8 +26,8 @@
         @foreach($interLocalSale as $key => $purchases)
         <tr>
             <td>{{ $purchases->name_of_seller }}</td>
-            <td>{{ $purchases->debit_note_date }}</td>
-            <td>{{ $purchases->total_charges }}</td>
+            <td>{{ $purchases->invoice_date }}</td>
+            <td>{{ ( ($purchases->net_value) + ($purchases->tax_value) + ($purchases->other_charges) ) }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
