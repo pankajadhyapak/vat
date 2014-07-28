@@ -71,8 +71,11 @@
     <!-- Total Charges Form Input -->
     <div class="form-group {{ formErrorClass($errors, 'total_charges'); }}">
         {{ Form::label('total_charges', 'Total Charges :',['class'=>'control-label']) }}
-        {{ Form::text('total_charges', null, ['class' => 'form-control']) }}
+        {{ Form::text('total_charges', null, ['id' => 'total_value','class' => 'form-control','disabled' =>'disabled']) }}
         {{ $errors->first('total_charges', '<span class="help-block">:message</span>') }}
+
+        @include('jsAdder')
+
     </div>
 
     <!-- Original Invoice Number Form Input -->
@@ -100,10 +103,3 @@
 
 </div>
 
-<script>
-    $(document).ready(function(){
-        $('#net_value').blur(function(){
-            $('#total_charges').val($('#net_value').val());
-        });
-    });
-</script>

@@ -46,7 +46,7 @@ class DebitNotesController extends \BaseController {
 	{
 		$this->validator->validate(Input::all());
 
-        if( Auth::user()->DebitNotes()->create(Input::except('_token','debit_note_date_submit','original_invoice_date_submit')) ){
+        if( Auth::user()->DebitNotes()->create(Input::except('_token','debit_note_date_submit','original_invoice_date_submit','total_charges')) ){
 
             return Redirect::route('DebitNotes.index')->with('flash_message','Debit Note Added Successfully');
 
@@ -114,7 +114,7 @@ class DebitNotesController extends \BaseController {
 	{
 		$this->validator->validate(Input::all());
 
-        if( Auth::user()->DebitNotes()->where('id',$id)->update(Input::except('_token','_method','debit_note_date_submit','original_invoice_date_submit')) ){
+        if( Auth::user()->DebitNotes()->where('id',$id)->update(Input::except('_token','_method','debit_note_date_submit','original_invoice_date_submit','total_charges')) ){
 
             return Redirect::route('DebitNotes.index')->with('flash_message','Debit Note Updated Successfully');
 

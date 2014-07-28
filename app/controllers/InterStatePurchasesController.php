@@ -47,7 +47,7 @@ class InterStatePurchasesController extends \BaseController {
     {
         $this->validator->validate(Input::all());
 
-        if( Auth::user()->InterStatePurchases()->create(Input::except('_token','invoice_date_submit' )) ){
+        if( Auth::user()->InterStatePurchases()->create(Input::except('_token','invoice_date_submit','total_charges' )) ){
 
             return Redirect::route('InterStatePurchases.index')->with('flash_message','Inter State Purchases Added Successfully');
 
@@ -114,7 +114,7 @@ class InterStatePurchasesController extends \BaseController {
     {
         $this->validator->validate(Input::all());
 
-        if( Auth::user()->InterStatePurchases()->where('id',$id)->update(Input::except('_token','_method','invoice_date_submit')) ){
+        if( Auth::user()->InterStatePurchases()->where('id',$id)->update(Input::except('_token','_method','invoice_date_submit','total_charges')) ){
 
             return Redirect::route('InterStatePurchases.index')->with('flash_message','Credit Note Updated Successfully');
 

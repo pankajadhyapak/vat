@@ -1,9 +1,7 @@
 <?php
-
-
-
-
-
+/*
+	 This code is written by Pankaj Adhyapak
+*/
 function formErrorClass($errors, $inputName)
 {
 
@@ -162,3 +160,15 @@ Form::macro('PurposeType', function($name)
 //
 //    }
 //}
+
+Validator::extend('cexists', function($attribute, $value, $parameters)
+{
+     $db1 = DB::table($parameters[0])->where($parameters[1], $value)->count();
+     $db2 = DB::table($parameters[2])->where($parameters[3], $value)->count();
+
+        if( $db1 || $db2 ){
+           return true;
+        }
+
+    return false;
+});

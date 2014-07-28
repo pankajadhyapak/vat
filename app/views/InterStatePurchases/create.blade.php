@@ -95,11 +95,11 @@
        <!-- Total Value Form Input -->
        <div class="form-group {{ formErrorClass($errors, 'total_value'); }}">
            {{ Form::label('total_value', 'Total Value :',['class'=>'control-label']) }}
-           {{ Form::text('total_value', null, ['class' => 'form-control']) }}
+           {{ Form::text('total_value', null, ['class' => 'form-control','disabled' =>'disabled']) }}
            {{ $errors->first('total_value', '<span class="help-block">:message</span>') }}
        </div>
-       
-       
+
+
 
         <!-- Form Type Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'form_type'); }}">
@@ -140,4 +140,5 @@
     </div>
 
 </div>
+@include('jsAdder')
 @stop

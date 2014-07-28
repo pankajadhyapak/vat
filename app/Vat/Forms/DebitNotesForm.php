@@ -14,8 +14,13 @@ class DebitNotesForm extends FormValidator
         'net_value' => 'required|integer|min:1',
         'tax_value' => 'required|integer|min:0',
         'other_charges' => 'required|integer|min:0',
-        'total_charges' => 'required|integer|min:0',
-        'original_invoice_number' => 'required|exists:local_purchases,invoice_number',
+        'total_value' => 'required|integer|min:0',
+        'original_invoice_number' => 'required|cexists:local_purchases,invoice_number,InterStatePurchases,invoice_number',
         'original_invoice_date' => 'required|exists:local_purchases,invoice_date'
     ];
-} 
+
+    protected $messages = [
+        'original_invoice_number.cexists' => 'Invoice Number Does not Exists in Local Purchases OR Inter State Purchases'
+    ];
+
+}

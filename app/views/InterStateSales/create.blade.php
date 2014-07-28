@@ -28,76 +28,79 @@
                 {{ $errors->first('year', '<span class="help-block">:message</span>') }}
             </div>
         </div>
-        
+
         <!-- Seller Tin Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'seller_tin'); }}">
             {{ Form::label('seller_tin', 'Seller Tin :',['class'=>'control-label']) }}
             {{ Form::text('seller_tin', null, ['class' => 'form-control']) }}
             {{ $errors->first('seller_tin', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Name of Seller Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'name_of_seller'); }}">
             {{ Form::label('name_of_seller', 'Name of Seller :',['class'=>'control-label']) }}
             {{ Form::text('name_of_seller', null, ['class' => 'form-control']) }}
             {{ $errors->first('name_of_seller', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Address of Seller Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'address_of_seller'); }}">
             {{ Form::label('address_of_seller', 'Address of Seller :',['class'=>'control-label']) }}
             {{ Form::text('address_of_seller', null, ['class' => 'form-control']) }}
             {{ $errors->first('address_of_seller', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Invoice Number Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'invoice_number'); }}">
             {{ Form::label('invoice_number', 'Invoice Number :',['class'=>'control-label']) }}
             {{ Form::text('invoice_number', null, ['class' => 'form-control']) }}
             {{ $errors->first('invoice_number', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Invoice Date Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'invoice_date'); }}">
             {{ Form::label('invoice_date', 'Invoice Date :',['class'=>'control-label']) }}
             {{ Form::text('invoice_date', null, ['class' => 'form-control']) }}
             {{ $errors->first('invoice_date', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Quantity Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'quantity'); }}">
             {{ Form::label('quantity', 'Quantity :',['class'=>'control-label']) }}
             {{ Form::text('quantity', null, ['class' => 'form-control']) }}
             {{ $errors->first('quantity', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Net Value Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'net_value'); }}">
             {{ Form::label('net_value', 'Net Value :',['class'=>'control-label']) }}
             {{ Form::text('net_value', null, ['class' => 'form-control']) }}
             {{ $errors->first('net_value', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Tax Value Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'tax_value'); }}">
             {{ Form::label('tax_value', 'Tax Value :',['class'=>'control-label']) }}
             {{ Form::text('tax_value', null, ['class' => 'form-control']) }}
             {{ $errors->first('tax_value', '<span class="help-block">:message</span>') }}
         </div>
-        
+
         <!-- Other Charges Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'other_charges'); }}">
             {{ Form::label('other_charges', 'Other Charges :',['class'=>'control-label']) }}
             {{ Form::text('other_charges', null, ['class' => 'form-control']) }}
             {{ $errors->first('other_charges', '<span class="help-block">:message</span>') }}
         </div>
-        
-        <!-- Total Value Form Input -->
-        <div class="form-group {{ formErrorClass($errors, 'total_value'); }}">
-            {{ Form::label('total_value', 'Total Value :',['class'=>'control-label']) }}
-            {{ Form::text('total_value', null, ['class' => 'form-control']) }}
-            {{ $errors->first('total_value', '<span class="help-block">:message</span>') }}
-        </div>
+
+ <!-- Total Charges Form Input -->
+    <div class="form-group {{ formErrorClass($errors, 'total_charges'); }}">
+        {{ Form::label('total_charges', 'Total Charges :',['class'=>'control-label']) }}
+        {{ Form::text('total_charges', null, ['id' => 'total_value','class' => 'form-control','disabled' =>'disabled']) }}
+        {{ $errors->first('total_charges', '<span class="help-block">:message</span>') }}
+
+        @include('jsAdder')
+
+    </div>
 
         <!-- Form Type Form Input -->
         <div class="form-group {{ formErrorClass($errors, 'form_type'); }}">
@@ -112,8 +115,8 @@
             {{ Form::main_commodity() }}
             {{ $errors->first('main_commodity', '<span class="help-block">:message</span>') }}
         </div>
-        
-        
+
+
 
         <!-- Button Form Input -->
         <div class="form-group">

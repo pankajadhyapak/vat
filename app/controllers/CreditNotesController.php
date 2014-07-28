@@ -46,7 +46,7 @@ class CreditNotesController extends \BaseController {
 	{
 		$this->validator->validate(Input::all());
 
-        if( Auth::user()->CreditNotes()->create(Input::except('_token','credit_note_date_submit','original_invoice_date_submit' )) ){
+        if( Auth::user()->CreditNotes()->create(Input::except('_token','credit_note_date_submit','original_invoice_date_submit','total_charges' )) ){
 
             return Redirect::route('creditNotes.index')->with('flash_message','Credit Note Added Successfully');
 

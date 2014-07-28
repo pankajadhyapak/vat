@@ -12,4 +12,5 @@
     @include('generateXml')
 
 </div>
+
 @stop

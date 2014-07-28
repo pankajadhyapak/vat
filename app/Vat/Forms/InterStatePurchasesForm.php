@@ -17,11 +17,10 @@ class InterStatePurchasesForm extends FormValidator{
         'net_value' => 'required|numeric|min:1',
         'tax_value' => 'required|numeric|min:0',
         'other_charges' => 'required|numeric|min:0',
-        'total_value' => 'required|numeric|min:1',
         'form_type' => 'required',
         'main_commodity' => 'required',
         'purpose_type' => 'required',
         'sub_commodity_description' => 'required'
     ];
 
-} 
+}

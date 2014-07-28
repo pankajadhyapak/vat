@@ -50,7 +50,7 @@
     <!-- Net Value Of Goods Form Input -->
     <div class="form-group {{ formErrorClass($errors, 'net_value_of_goods'); }}">
         {{ Form::label('net_value_of_goods', 'Net Value Of Goods :',['class'=>'control-label']) }}
-        {{ Form::text('net_value_of_goods', null, ['class' => 'form-control']) }}
+        {{ Form::text('net_value_of_goods', null, ['class' => 'form-control','id' =>'net_value']) }}
         {{ $errors->first('net_value_of_goods', '<span class="help-block">:message</span>') }}
     </div>
 
@@ -66,6 +66,17 @@
         {{ Form::label('other_charges', 'Other Charges :',['class'=>'control-label']) }}
         {{ Form::text('other_charges', null, ['class' => 'form-control']) }}
         {{ $errors->first('other_charges', '<span class="help-block">:message</span>') }}
+    </div>
+
+
+    <!-- Total Charges Form Input -->
+    <div class="form-group {{ formErrorClass($errors, 'total_charges'); }}">
+        {{ Form::label('total_charges', 'Total Charges :',['class'=>'control-label']) }}
+        {{ Form::text('total_charges', null, ['id' => 'total_value','class' => 'form-control','disabled' =>'disabled']) }}
+        {{ $errors->first('total_charges', '<span class="help-block">:message</span>') }}
+
+        @include('jsAdder')
+
     </div>
 
     <!-- Button Form Input -->

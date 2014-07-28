@@ -46,7 +46,7 @@ class LocalSalesController extends \BaseController {
 	{
         $this->validator->validate(Input::all());
 
-        if( Auth::user()->LocalSales()->create(Input::except('_token','invoice_date_submit')) ){
+        if( Auth::user()->LocalSales()->create(Input::except('_token','invoice_date_submit','total_charges')) ){
 
             return Redirect::route('LocalSales.index')->with('flash_message','Local Sales Added Successfully');
 
@@ -112,7 +112,7 @@ class LocalSalesController extends \BaseController {
 	{
         $this->validator->validate(Input::all());
 
-        if( Auth::user()->LocalSales()->where('id',$id)->update(Input::except('_token','_method','invoice_date_submit')) ){
+        if( Auth::user()->LocalSales()->where('id',$id)->update(Input::except('_token','_method','invoice_date_submit','total_charges')) ){
 
             return Redirect::route('LocalSales.index')->with('flash_message','Local Sale Updated Successfully');
 
