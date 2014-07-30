@@ -75,9 +75,9 @@
                 </div>
                 <div class="panel-body">
                     <span class="dash-num">{{ Auth::user()->InterStatePurchases()->count() }}</span> Entries
-                    <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Inter State Purchases</a>
+                    <a href="{{ URL::route('InterStatePurchases.index') }}" class="btn btn-info">Show all Inter State Purchases</a>
                     <br>
-                    <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Inter State Purchases</a>
+                    <a href="{{ URL::route('InterStatePurchases.create') }}" class="btn btn-info">Add New Inter State Purchases</a>
                 </div>
             </div>
         </div>
@@ -89,9 +89,9 @@
                 </div>
                 <div class="panel-body">
                     <span class="dash-num">{{ Auth::user()->InterStateSales()->count() }}</span> Entries
-                    <a href="{{ URL::route('creditNotes.index') }}" class="btn btn-info">Show all Inter State Sales</a>
+                    <a href="{{ URL::route('InterStateSales.index') }}" class="btn btn-info">Show all Inter State Sales</a>
                     <br>
-                    <a href="{{ URL::route('creditNotes.create') }}" class="btn btn-info">Add New Inter State Sales</a>
+                    <a href="{{ URL::route('InterStateSales.create') }}" class="btn btn-info">Add New Inter State Sales</a>
                 </div>
             </div>
         </div>

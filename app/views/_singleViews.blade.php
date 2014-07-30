@@ -11,7 +11,7 @@
         <table class="table table-bordered table-responsive" >
 
             @foreach($purchase->toArray() as $key => $items )
-            @if( ($key == 'id') ||($key == 'month') ||($key == 'year') || ($key == 'user_id') || ($key == 'created_at') || ($key == 'updated_at'))
+            @if( ($key == 'main_commodity') || ($key == 'purpose_type') ||($key == 'month') ||($key == 'year') || ($key == 'user_id') || ($key == 'created_at') || ($key == 'updated_at') || ($key == 'total_charges')|| ($key == 'total_value'))
             @continue
             @endif
             <tr>
@@ -20,9 +20,28 @@
                     </strong> : </td>
                 <td> {{ $items }}</td>
             </tr>
-
-
+            
             @endforeach
+            
+            
+            
+            @if($purchase->main_commodity )
+            <tr>
+	            <td><strong>Main Commodity :</strong></td>
+	            <td>{{ convertToString($purchase->main_commodity) }}</td>
+            </tr>
+            @endif
+            
+            @if($purchase->purpose_type )
+            <tr>
+	            <td><strong>Purpose Type :</strong></td>
+	            <td>{{ convertPurposeType($purchase->purpose_type) }}</td>
+            </tr>
+            <tr>
+            @endif
+	            <td><strong>Total Amount :</strong></td>
+	            <td>{{ ( ( $purchase->other_charges ) + ($purchase->tax_value)  + ( isset($purchase->net_value_of_goods) ? $purchase->net_value_of_goods:$purchase->net_value ) )}}</td>
+            </tr>
         </table>
 
     </div>

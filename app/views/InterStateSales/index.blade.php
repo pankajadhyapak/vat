@@ -4,7 +4,7 @@
 
 <div class="col-md-8 col-md-offset-2 well bs-component">
     <div class="col-md-9">
-        <h4>All Debit Notes </h4>
+        <h4>All Inter State Sales </h4>
     </div>
     <div class="col-md-3">
         <button class="btn btn-success" data-toggle="modal" data-target="#xmlgen">Generate Xml </button>

@@ -172,3 +172,125 @@ Validator::extend('cexists', function($attribute, $value, $parameters)
 
     return false;
 });
+
+function convertToString($id){
+	switch($id){
+					case 1.00: return " ADHESIVES OF ALL KINDS	"; break;
+					case 7.00: return " AERO/JET PLANES, HELICAOPTERS AND OTHER FLYING MACHINES/PARTS	"; break;
+					case 2.00: return " AGRICULTURAL AND  HORTICULTURAL IMPLEMENTS  	"; break;
+					case 3.00: return " ANIMAL AND ITS PRODUCTS	"; break;
+					case 4.00: return " ARECANUT IN ALL FORMS	"; break;
+					case 5.00: return " ARMS AND EXPLOSIVES	"; break;
+					case 6.00: return " AUDIO, MUSIC AND VIDEO SYSTEMS/EQUIPMENTS/PARTS/CDS/CASSETTES/TAPES	"; break;
+					case 55.00 : return " AUTOMOBILES/MOTOR VEHICLES OF ALL KINDS AND PARTS THEREOF	"; break;
+					case 8.00: return " BABY FOODS AND FOOD SUPPLEMENTS	"; break;
+					case 9.00: return " BAKERY PRODUCTS AND CONFECTIONERY	"; break;
+					case 10.00 : return " BATTERIES OF ALL KINDS AND PARTS	"; break;
+					case 11.00 : return " BICYCLES AND PARTS	"; break;
+					case 12.00 : return " BISCUITS	"; break;
+					case 13.00 : return " BRICKS AND TILES OF ALL KINDS	"; break;
+					case 80.01 : return " CARDAMOM	"; break;
+					case 14.00 : return " CARPETS	"; break;
+					case 26.01 : return " CASHEW	"; break;
+					case 15.00 : return " CEMENT AND ITS PRODUCTS  AND MIXTURES	"; break;
+					case 16.00 : return " CEREALS AND PULSES	"; break;
+					case 17.00 : return " CHEMICALS 	"; break;
+					case 18.00 : return " COAL AND COKE	"; break;
+					case 60.01 : return " COCONUT,COPRA AND DESICCATED COPRA	"; break;
+					case 19.00 : return " COFFEE SEEDS AND COFFEE	"; break;
+					case 20.00 : return " COIR PRODUCTS	"; break;
+					case 21.00 : return " COMPUTER OF ALL KINDS, PERIPHERALS,CONSUMABLES AND SOFTWARE	"; break;
+					case 22.00 : return " COOLING SYSTEMS AND PARTS	"; break;
+					case 23.00 : return " COTTON OF ALL KINDS	"; break;
+					case 24.00 : return " DAIRY PRODUCTS	"; break;
+					case 25.00 : return " DIESEL ENGINES AND PARTS	"; break;
+					case 26.00 : return " DRY FRUITS OTHER THAN CASHEW	"; break;
+					case 27.00 : return " EDIBLE OILS INCLUDING VANASPATHI	"; break;
+					case 28.00 : return " ELECTRICAL GOODS OF ALL KINDS (HOME/INDUSTRIAL)	"; break;
+					case 29.00 : return " ELECTRONIC GOODS	"; break;
+					case 30.00 : return " FERTILIZERS AND AGRO CHEMICALS	"; break;
+					case 31.00 : return " FIBRE GLASS AND ITS ARTICLES	"; break;
+					case 32.00 : return " FIRE FIGHTING EQUIPMENTS	"; break;
+					case 33.00 : return " FIREWORKS	"; break;
+					case 34.00 : return " FOOD AND DRINKS	"; break;
+					case 35.00 : return " FOOTWEAR OF ALL KINDS AND ACCESSORIES	"; break;
+					case 36.00 : return " FOREST PRODUCES	"; break;
+					case 37.00 : return " FURNITURE OF ALL KINDS	"; break;
+					case 38.00 : return " GLASS AND GLASS ARTICLES	"; break;
+					case 83.01 : return " GRANITE BLOCKS,SLABS AND TILES	"; break;
+					case 39.00 : return " HANDICRAFTS OF METALS  AND IVORY AND SANDALWOOD ARTICLES	"; break;
+					case 40.00 : return " HARDWARE AND PAINTS	"; break;
+					case 41.00 : return " ICE CREAM AND ICE	"; break;
+					case 42.00 : return " INCENSE STICKS	"; break;
+					case 43.00 : return " INDUSTRIAL GASES	"; break;
+					case 44.00 : return " IRON AND STEEL AND ITEMS THEREOF	"; break;
+					case 45.00 : return " JAGGERY	"; break;
+					case 46.00 : return " JEWELLERY AND ALL KINDS OF ARTICLES OF GOLD, SLIVER, PLATINUM	"; break;
+					case 47.00 : return " KITCHEN-WARE (STOVES, FLASKS, CHINAWARE, CUTLERY, ETC)	"; break;
+					case 48.00 : return " LEASING OF GOODS OF ALL KINDS	"; break;
+					case 49.00 : return " LEATHER GOODS OF ALL KINDS EXCLUDING FOOTWEAR	"; break;
+					case 50.00 : return " LIFTS AND ELEVATORS	"; break;
+					case 51.00 : return " LOCOMOTIVES AND PARTS THEREOF	"; break;
+					case 52.00 : return " MACHINERY AND PARTS	"; break;
+					case 83.00 : return " MARBLES , SLABS AND TILES	"; break;
+					case 53.00 : return " MEDICINAL AND PHARMACEUTICAL PREPARATIONS , EQUIPMENTS  	"; break;
+					case 54.00 : return " MINERALS AND  ORES 	"; break;
+					case 56.00 : return " MUSICAL INSTRUMENTS	"; break;
+					case 57.00 : return " NARCOTICS	"; break;
+					case 58.00 : return " NON-EDIBLE OIL	"; break;
+					case 59.00 : return " NON-FERROUS METALS (ALUMINIUM, BRONZE, COPPER, BRASS, ZINC, LEAD, MERCURY) AND THEIR PRODUCTS	"; break;
+					case 60.00 : return " OIL SEEDS AND OIL CAKE	"; break;
+					case 61.00 : return " OPTICAL GOODS (BINACULARS, SPECTACLES, SUNGLASSES, MICRO/TELE SCOPES)	"; break;
+					case 99.99 : return " OTHERS	"; break;
+					case 62.00 : return " PACKING MATERIALS	"; break;
+					case 63.00 : return " PAPER  IN ALL FORMS AND PAPER WASTE	"; break;
+					case 80.02 : return " PEPPER	"; break;
+					case 64.00 : return " PETROLEUM PRODUCTS	"; break;
+					case 65.00 : return " PHOTO, FILMS, CAMERAS AND THEIR PARTS, PHOTO/CINEMATOGRAPHIC GOODS	"; break;
+					case 66.00 : return " PIPES AND FITTINGS	"; break;
+					case 67.00 : return " PLASTIC ARTICLES 	"; break;
+					case 68.00 : return " PLYWOOD AND OTHER SHEETS , BOARDS	"; break;
+					case 69.00 : return " PRINTED MATERIALS	"; break;
+					case 70.00 : return " PUMPS, PUMPSETS AND PARTS	"; break;
+					case 71.00 : return " READYMADE GARMENTS, TEXTILE MADE   UPs AND HOSIERY 	"; break;
+					case 72.00 : return " RECTIFIED SPIRIT AND OTHERS 	"; break;
+					case 73.00 : return " RENEWABLE ENERGY DEVICES AND BIO-FUELS 	"; break;
+					case 74.00 : return " ROOFING MATERIALS	"; break;
+					case 75.00 : return " RUBBER ARTICLES	"; break;
+					case 76.00 : return " SAND	"; break;
+					case 77.00 : return " SANITARY GOODS AND FITTINGS	"; break;
+					case 44.01 : return " SCRAP OF FERROUS AND NON-FERROUS METALS	"; break;
+					case 79.00 : return " SHIIPS AND BOATS	"; break;
+					case 78.00 : return " SIGN BOARDS AND HOARDINGS	"; break;
+					case 80.00 : return " SPICES	"; break;
+					case 81.00 : return " SPORTS GOODS	"; break;
+					case 82.00 : return " STATIONERY ARTICLES	"; break;
+					case 84.00 : return " SUGAR AND SUGARCANE	"; break;
+					case 85.00 : return " TEA	"; break;
+					case 86.00 : return " TELEPHONES	"; break;
+					case 87.00 : return " TEXTILES AND FABRICS	"; break;
+					case 88.00 : return " TIMBER AND WOOD	"; break;
+					case 89.00 : return " TOBACCO AND ITS PRODUCTS	"; break;
+					case 90.00 : return " TOILET ARTICLES	"; break;
+					case 91.00 : return " TOYS OF ALL KINDS	"; break;
+					case 92.00 : return " WATCHES AND CLOCKS	"; break;
+					case 93.00 : return " WEIGHTS AND MEASURES	"; break;
+					case 94.00 : return " WORKS CONTRACT	"; break;
+					case 95.00 : return " YARN	"; break;
+}
+
+}
+
+function convertPurposeType($id){
+
+	switch ($id) {
+					case 1 : return "RESALE	 "; break;
+					case 2 : return "USE IN MANUFACTURE/PROCRSSING OF GOODS FOR  "; break;
+					case 3 : return "USE IN MINING "; break;
+					case 4 : return "USE IN GENERATION/DISTRIBUTION OF POWER "; break;
+					case 5 : return "PACKING OF GOODS FOR SALE/RESALE "; break;
+					case 6 : return "IN THE TELECOMMUNICATION NETWORK  "; break;
+					case 7 : return " FOR PACKING OF ANY CONTAINER/GOODS  "; break;
+
+	}
+}
